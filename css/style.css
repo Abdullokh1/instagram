@@ -216,9 +216,17 @@ body {
   font-size: 13px;
   font-weight: 600;
 }
-
+.slide-wrap-icon{
+  width: 28px;
+  height: 28px;
+  border: 3.5px solid #fff;
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.399) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 .slider-icon{
   font-size: 30px;
+  color: rgb(255, 255, 255);
 }
 .card-list{
   display: flex;
@@ -289,6 +297,7 @@ body {
 }
 .hero__bold__text{
   font-weight: 600;
+  white-space: nowrap;
 }
 .hero__sub__title{
   color: #8e8e8e;
@@ -308,38 +317,33 @@ body {
   margin-bottom: -15px;
 }
 .hero__slide__item{
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-#hero{
-  overflow: hidden;
+  margin-right: 65px;
 }
 .slider-ul{
+  transition: all 0.3s ease;
+
+}
+.hero__list__hold{
   position: relative;
-  flex-wrap: wrap;
+  overflow: hidden;
 }
 .hero__slide__arrow{
   height: 140px;
-}
-.hero__btn__box{
- position: absolute;
- left: 90px;
 }
 .hero__arrow__icon{
   opacity: 0.6;
   font-size: 25px;
 }
-.bxs-chevron-left-circle{
-  position: relative;
-  right: 90px;
-}
-.modal-heart-icon{
-  color: red;
-  font-size: 60px;
+.hero__btn__box{
   position: absolute;
-  top: 43%;
-  left: 46%;
-  transition: all 2s ease;
-  transform: scale(1);
+  left: 0;
+  top: 25%;
+}
+.hero__right__box{
+  position: absolute;
+  right: 0;
+  top: 25%;
 }

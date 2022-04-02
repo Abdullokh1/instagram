@@ -72,7 +72,8 @@
 
    
       <div class="hero__list__hold">
-        <ul class="m-0 p-0 d-flex slider-ul justify-content-between">
+       
+        <ul class="m-0 p-0 d-flex slider-ul" id="slideList">
   
           <li class="hero__slide__item ">
             <a href="#"><img class="hero__slide__img" src="media/slider-1.jpg" alt="slider-1" width="77" height="77"></a><br>
@@ -103,28 +104,58 @@
             <a href="#"><img class="hero__slide__img" src="media/slider-6.jpg" alt="slider-6" width="77" height="77"></a><br>
            <p class="hero__bold__text m-0">Yangiliklar</p> 
           </li>
+
+          <li class="hero__slide__item ">
+            <a href="#"><img class="hero__slide__img" src="media/slider-1.jpg" alt="slider-1" width="77" height="77"></a><br>
+             <p class="hero__bold__text mt-0 ">Master klass</p> 
+          </li>
   
-         <div class="d-flex  align-items-center">
-           <div class="hero__btn__box">
-             <button id="leftSlide"><i class='bx hero__arrow__icon bxs-chevron-left-circle'></i></button>
-           </div>
-            
-           <div class="hero__btn__box--right">
-            <button id="rightSlide"><i class='bx hero__arrow__icon bxs-chevron-left-circle bx-flip-horizontal' ></i></button>
-          </div>
-         </div>
+
+          <li class="hero__slide__item">
+            <a href="#"><img class="hero__slide__img" src="media/slider-3.jpg" alt="slider-3" width="77" height="77"></a><br>
+           <p class="hero__bold__text m-0">Ramazon</p> 
+          </li>
+
+          <li class="hero__slide__item">
+            <a href="#"><img class="hero__slide__img" src="media/slider-4.jpg" alt="slider-4" width="77" height="77"></a><br>
+           <p class="hero__bold__text m-0">2021</p> 
+          </li>
+
+          <li class="hero__slide__item">
+            <a href="#"><img class="hero__slide__img" src="media/slider-2.jpg" alt="slider-2" width="77" height="77"></a><br>
+           <p class="hero__bold__text m-0">Darslar</p> 
+          </li>
+
+          <li class="hero__slide__item">
+            <a href="#"><img class="hero__slide__img" src="media/slider-6.jpg" alt="slider-6" width="77" height="77"></a><br>
+           <p class="hero__bold__text m-0">Yangiliklar</p> 
+          </li>
+
+          <li class="hero__slide__item">
+            <a href="#"><img class="hero__slide__img" src="media/slider-5.jpg" alt="slider-5" width="77" height="77"></a><br>
+           <p class="hero__bold__text m-0">Savol / Javob</p> 
+          </li>        
+
         </ul>
 
+        <div class="hero__btn__box">
+          <button id="leftSlide"><i class='bx hero__arrow__icon bxs-chevron-left-circle'></i></button>
+        </div>
+        <div class="hero__right__box">
+          <button id="rightSlide"><i class='bx hero__arrow__icon bxs-chevron-left-circle bx-flip-horizontal' ></i></button>
+        </div>
+       
       </div>
     </div>
 
   </section>
 
-
   <section id="content">
+
     <div class="container pb-5">
       <span class="content__line"></span>
       <ul class="m-0 p-3 d-flex justify-content-center align-items-center">
+
         <li class="content__item">
           <button class="content__link Post"><i class='bx content__icon bx-grid me-1'></i>Posts</button>
         </li>
@@ -137,6 +168,7 @@
         <li>
           <button class="content__link saved"><i class='bx content__icon bxs-bookmarks me-1'></i>Saved</button>
         </li>
+        
       </ul>
 
       <ul class="card-list m-0 p-0" id="savedList">
@@ -144,8 +176,11 @@
       </ul>
 
       <ul class="card-list  m-0 p-0" id="cardList">
+
       </ul>
+
     </div>
+
   </section>
 
 

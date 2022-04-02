@@ -61,16 +61,17 @@ let instagram = [
 
 ]
 
-
-
 const cardItem = document.querySelector('card-item');
 const MainList = document.getElementById('cardList');
+const saved = document.querySelector('.saved');
+const Post = document.querySelector('.Post');
+const slideList = document.getElementById('slideList');
 
 
 
 let count = 0;
 
-  instagram.forEach((item,index) =>{
+  instagram.forEach((item) =>{
   
     let li = document.createElement('li');
     li.className = 'card-item col-4';
@@ -104,20 +105,25 @@ let count = 0;
                <div class="carousel-inner">
                 <div class="carousel-item active">
                   <span class='outcome-heart'></span>
-                  <img class="modal-img" src="${item.media[0]}" alt="img">
+                  <img src="${item.media[0]}" alt="img">
                 </div>
                 <div class="carousel-item">
-                  <img src="${item.media[1]}" class="d-block w-100" alt="second-img">
+                  <img src="${item.media[1]}"  alt="second-img">
                 </div>
                 <div class="carousel-item">
-                <img src="${item.media[2]}" class="d-block w-100" alt="third-img">
+                <img src="${item.media[2]}"  alt="third-img">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls${count}" data-bs-slide="prev">
-              <i class='bx slider-icon bxs-chevron-right-circle bx-flip-horizontal' ></i>
+              <span class = 'slide-wrap-icon d-flex justify-content-center align-items-center'>
+              <i class='bx slider-icon bx-chevron-left'></i>
+              </span>
+              
               </button>
               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls${count}" data-bs-slide="next">
-              <i class='bx slider-icon bxs-chevron-right-circle'></i>
+              <span class = 'slide-wrap-icon d-flex justify-content-center align-items-center'>
+              <i class='bx slider-icon bx-chevron-right'></i>
+              </span>
               </button>
   
   
@@ -193,7 +199,7 @@ let count = 0;
                    </div>
                    <button class='bookmark-btn' onclick = "bookmark(${item.id})"><i class='bx comment-icons bx-bookmark'></i></button>
                  </div>
-                 <p class="najot-text m-0 mb-1 mt-2">${item.like} likes</p>
+                 <p class="najot-text likeCount m-0 mb-1 mt-2">${item.like} likes</p>
                  <p class="hour-text">8 hours ago</p>
                  <div class="d-flex w-100 align-items-center justify-content-between">
                    <div>
@@ -240,6 +246,8 @@ like.forEach(item =>{
 })
 
 
+
+
 const BookmarkBtn = document.querySelectorAll('.bookmark-btn');
 const SaveList = document.getElementById('savedList');
 const ModalImg = document.querySelectorAll('.modal-img');
@@ -258,11 +266,9 @@ BookmarkBtn.forEach(el =>{
   })
 })
 
-
 function bookmark(id){
   instagram.forEach(item =>{
     if (id == item.id){
-
     let li = document.createElement('li');
     li.className = 'card-item col-4';
     li.setAttribute("data-bs-toggle","modal")
@@ -383,7 +389,7 @@ function bookmark(id){
                      <button><i class='bx ms-2 comment-icons bx-message-rounded bx-flip-horizontal'></i></button>
                      <button><i class='bx ms-2 comment-icons bxl-telegram'></i></button>
                    </div>
-                   <button class='bookmark-btn' onclick = "bookmark(${item.id})"><i class='bx comment-icons bx-bookmark'></i></button>
+                   <button class='bookmark-btn'><i class='bx comment-icons bx-bookmark'></i></button>
                  </div>
                  <p class="najot-text m-0 mb-1 mt-2">${item.like} likes</p>
                  <p class="hour-text">8 hours ago</p>
@@ -405,6 +411,8 @@ function bookmark(id){
     count++;
     SaveList.appendChild(li);
     SaveList.appendChild(div);
+
+
     SaveList.style.display = 'none';
   
        let med = item.media;
@@ -426,8 +434,7 @@ function bookmark(id){
 }
 
 
-const saved = document.querySelector('.saved');
-const Post = document.querySelector('.Post');
+
 
 saved.addEventListener('click', function(){
   MainList.style.display = 'none';
@@ -442,3 +449,26 @@ Post.addEventListener('click', ()=>{
   saved.style.color = '#8e8e8e';
 })
 
+
+const rightBtn = document.getElementById('rightSlide');
+const leftBtn = document.getElementById('leftSlide');
+const Imglengt = slideList.querySelectorAll('li');
+
+let slideCount = 0;
+rightBtn.addEventListener('click', ()=>{
+  slideCount++;
+  changeImg();
+})
+leftBtn.addEventListener('click', ()=>{
+  slideCount--;
+  changeImg();
+})
+
+function changeImg(){
+  if (slideCount > Imglengt.length - 7){
+    slideCount = 0;
+  } else if (slideCount < 0){
+    slideCount = Imglengt.length - 7;
+  }
+  slideList.style.transform = `translateX(${-slideCount*150}px)`;
+}
